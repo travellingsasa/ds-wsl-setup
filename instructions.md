@@ -401,7 +401,7 @@ For more useful aliases [see](https://opensource.com/article/19/7/bash-aliases)
 
 
 # Running jupyter lab after installation
-We will run jupyter lab without the browser windowb because this doesn't work in wls. After running the command Follow the prompt and copy paste the address into your browser.
+We will run jupyter lab without the browser window because this doesn't work in wls. After running the command, follow the prompt and copy paste the address into your browser.
 
 ```
 jupyter lab --no-browser
