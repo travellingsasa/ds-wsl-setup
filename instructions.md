@@ -263,50 +263,6 @@ pyenv local 3.8.5
 pyenv global 3.8.5
 ```
 
-
-## Install pyenv
-
-[Pyenv](https://github.com/pyenv/pyenv) is a simple Python version management tool you can download for free using homebrew. 
-
-```
-brew update
-brew install openssl readline sqlite3 xz zlib
-brew install pyenv
-```
-
-After you installed pyenv you need to add another line to the .zshrc file. Open the file and add the second line somewhere nearly at the bottom of the file: 
-
-```
-vim ~/.zshrc
-eval "$(pyenv init -)"
-```
-
-There are several advantages for using a tool like pyenv. It allows you to easily download or switch between Python versions with a single command. You can also set the Python version of your choice as the global one. 
-It even makes it possible to switch Python versions by changing the directory. This proves to be particularly useful when you have different directories for projects which require different versions of Python. 
-
-## Install Python versions
-
-After you installed pyenv you can easily install different Python versions. If you want to see a list of all available versions and flavors you can use the following command:
-
-```
-pyenv install --list
-```
-
-For the bootcamp we will use Python 3.8.5. You can install it with:
-
-```
-sudo apt install libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev
-
-pyenv install 3.8.5     
-```
-
-To set a specific version as the local (inside a directory) or global (everywhere) Python version you can use:
-
-```
-pyenv local 3.8.5
-pyenv global 3.8.5
-```
-
 ### Creating virtual environments with pyenv and [venv](https://docs.python.org/3/tutorial/venv.html) 
 
 Another way of creating virtual environments is tu use the module `venv`. First of all move to the directory for which you want to create the virtual environment. Make sure you use the desired Python version either locally in this directory or globally (you can check the Python version either with `python --version` or `which python`). To set the local Python version and create a new environment you can use the following commands:
@@ -380,6 +336,22 @@ Follow any other instructions given by Homebrew.
 
 > You may wonder what the difference is between using `brew` and `pip`. They are both package installers, but brew, which is based on Ruby and Git, can be used to install all kinds of software packages, while pip, which is written in Python, can only be used to install Python packages. The main difference, however, is that brew installs packages globally and it cannot be used to install something only in a specific virtual environment. To install a package only locally in an environment you have to use pip!
 
+## Install pyenv via homebrew
+
+[Pyenv](https://github.com/pyenv/pyenv) is a simple Python version management tool you can download for free using homebrew. 
+
+```
+brew update
+brew install openssl readline sqlite3 xz zlib
+brew install pyenv
+```
+
+After you installed pyenv you need to add another line to the .zshrc file. Open the file and add the second line somewhere nearly at the bottom of the file: 
+
+```
+vim ~/.zshrc
+eval "$(pyenv init -)"
+```
 
 
 # Add alias to zsh config file
