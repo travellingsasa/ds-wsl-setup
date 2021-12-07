@@ -15,9 +15,6 @@ If you installed wls2, you might want to check if the right version is active. Y
 <img src="https://user-images.githubusercontent.com/21205508/118002859-5204de00-b348-11eb-8ff7-714cf530a656.png" alt="alt text" width="400" height="263">
 
 
-
-
-
 In the previous step we've installed a linux distribution. This distro comes with it's own linux terminal and shell. You can either work with this setup or install new terminals and shells with additional features. We will install here the "Windows Terminal". This terminal has a nice "tab" functionality which let's you choose if you want to start the ubuntu terminal, the powershell or other installed terminals. 
 Most linux distros come with the bash shell preinstalled. But what is bash?
 
@@ -51,6 +48,15 @@ Agnoster ist just one of many different themes which come preinstalled in oh-my-
 Uses popular themes from mac os iterm2 terminal.
 
 4. [Starship theme](https://starship.rs/guide/#%F0%9F%9A%80-installation) 🚀
+Install starship
+```
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+```
+Add the following to the end of ~/.zshrc:
+```
+export eval "$(starship init zsh)" >> ~/.zshrc
+```
+
 
 I personally use the windows terminal, with the firamono nerd font and starship. Do whatever you like. If this is overwhelming stick to number one, two or use my routine:
 
@@ -74,7 +80,7 @@ Check if the correct shell is active
 ```
 echo $Shell
 ```
-It shoul say something like "/usr/bin/zsh".
+It should say something like "/usr/bin/zsh".
 
 Install or enable plugins in zsh. Firs clone the plugins and then add them to your zsh config file.
 
@@ -335,7 +341,7 @@ $ pip freeze > requirements.txt
 ```
 Then add homebrew to the path:
 ```
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/bebop/.profile
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/USERNAME/.profile
 ```
 
 ```
@@ -431,7 +437,7 @@ On the top right of the terminal zsh should be automatically selected.
 ![vscode terminal!](Inkedvscode_terminal_LI.jpg  "ALT")
 
 
-Next to it is a plus sign and a arrow down sign. Press
+Next to it is a plus sign and a arrow down sign. To add the FiraMono as font press
 ```
 arrow > Configure Terminal Settings and search for @feature:terminal font
 
