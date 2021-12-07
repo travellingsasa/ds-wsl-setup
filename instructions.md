@@ -4,7 +4,7 @@ The terminal usually refers to a [terminal emulator program](https://www.ttwin.c
 # Installing windows linux subsystem and a linux distribution
 <img src="https://docs.microsoft.com/en-us/windows/images/windows-linux-dev-env.png" alt="wsl" width="400" height="263">
 
-Since Windows 10, Windows comes with a linux subsystem (wls) which allows you to run linux on your windows machine. This subsystem was upgraded 2021 for performance enhancements and is called wls2. It is up to you which version you want to install. The following link shows you how to install wls and upgrade to wls2. If you don't want to upgrade to wls2 you skip steps 2-5.
+Since Windows 10, Windows comes with a linux subsystem (wls) which allows you to run linux on your windows machine. This subsystem was upgraded 2021 for performance enhancements and is called wls2. It is up to you which version you want to install. The following link shows you how to install wls anfpyd upgrade to wls2. If you don't want to upgrade to wls2 you skip steps 2-5.
 [Follow these steps.](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-3---enable-virtual-machine-feature)
 
 
@@ -203,24 +203,43 @@ pip3 --version
 # Python, pyenv and the wonderful world of virtual environments
 
 ## Install pyenv
-We will use pyenv and virtual environments to install, organize and manage different versions of Python (and other libraries) on your computer.
-Instal instructions copied from the pyenv github [page](https://github.com/pyenv/pyenv#installation)
+We will use pyenv and virtual environments to install, organize and manage different versions of Python (and other libraries) on your computer.  
+~~Install instructions copied from the pyenv github [page] https://github.com/pyenv/pyenv#installation)~~
+~~1. Check out pyenv where you want it installed. A good place to choose is $HOME/.pyenv (but you can install it somewhere else).~~
 
-1. Check out pyenv where you want it installed. A good place to choose is $HOME/.pyenv (but you can install it somewhere else).
+We will use the Pyenv-installer instead.
+This will install pyenv along with a few plugins that are useful:[](https://realpython.com/intro-to-pyenv/#installing-pyenv)
+```diff
+- git clone https://github.com/pyenv/pyenv.git ~/.pyenv
++ curl https://pyenv.run | bash
 ```
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+This will add additional functionalities.
+
+pyenv: The actual pyenv application
+pyenv-virtualenv: Plugin for pyenv and virtual environments
+pyenv-update: Plugin for updating pyenv
+pyenv-doctor: Plugin to verify that pyenv and build dependencies are installed
+pyenv-which-ext: Plugin to automatically lookup system commands ""
+
+~~Optionally, try to compile dynamic bash extension to speed up pyenv. Don't worry if it fails; pyenv will still work normally:~~
+```diff
+-cd ~/.pyenv && src/configure && make -C src
 ```
-Optionally, try to compile dynamic bash extension to speed up pyenv. Don't worry if it fails; pyenv will still work normally:
-```
-cd ~/.pyenv && src/configure && make -C src
-```
+
+
 2. Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned and add $PYENV_ROOT/bin to your $PATH for access to the pyenv command-line utility.
 For bash/Zsh:
+```diff
+- echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+- echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+- echo 'eval "$(pyenv init --path)"' >> ~/.profile
+
++ export PATH="$HOME/.pyenv/bin:$PATH" >> ~/.zshrc
++ eval "$(pyenv init -)" >> ~/.zshrc
++ eval "$(pyenv virtualenv-init -)" >> ~/.zshrc
 ```
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
-echo 'eval "$(pyenv init --path)"' >> ~/.profile
-```
+
 3. Add pyenv init to your shell to enable shims and autocompletion. Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
 
 For bash:
