@@ -208,7 +208,7 @@ We will use pyenv and virtual environments to install, organize and manage diffe
 ~~1. Check out pyenv where you want it installed. A good place to choose is $HOME/.pyenv (but you can install it somewhere else).~~
 
 We will use the Pyenv-installer instead.
-This will install pyenv along with a few plugins that are useful:[](https://realpython.com/intro-to-pyenv/#installing-pyenv)
+[This will install pyenv along with a few plugins that are useful:](https://realpython.com/intro-to-pyenv/#installing-pyenv)
 ```diff
 - git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 + curl https://pyenv.run | bash
@@ -216,11 +216,12 @@ This will install pyenv along with a few plugins that are useful:[](https://real
 
 This will add additional functionalities.
 
-pyenv: The actual pyenv application
-pyenv-virtualenv: Plugin for pyenv and virtual environments
-pyenv-update: Plugin for updating pyenv
-pyenv-doctor: Plugin to verify that pyenv and build dependencies are installed
-pyenv-which-ext: Plugin to automatically lookup system commands ""
+pyenv: The actual pyenv application   
+pyenv-virtualenv: Plugin for pyenv and virtual environments  
+pyenv-update: Plugin for updating pyenv  
+pyenv-doctor: Plugin to verify that pyenv and build dependencies are installed  
+pyenv-which-ext: Plugin to automatically lookup system commands  
+[source](https://realpython.com/intro-to-pyenv/#installing-pyenv)
 
 ~~Optionally, try to compile dynamic bash extension to speed up pyenv. Don't worry if it fails; pyenv will still work normally:~~
 ```diff
