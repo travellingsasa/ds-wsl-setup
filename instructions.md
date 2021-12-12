@@ -1,3 +1,12 @@
+[Some definitions](#some-definitions)
+
+[Installing windows linux subsystem and a linux distribution](#Installing-windows-linux-subsystem-and-a-linux-distribution)
+
+[](#)
+[](#)
+[](#)
+
+
 # Some definitions
 The terminal usually refers to a [terminal emulator program](https://www.ttwin.com/blog/333-terminal-emulator), which provides the window that displays the shell and allows you to interact with it. Usually a blinking courser marks the input line. This line is called the "prompt" or the "command line".   The shell is a program which interprets the user input. Also called a "command line interpreter".
 
@@ -10,7 +19,7 @@ Since Windows 10, Windows comes with a linux subsystem (wls) which allows you to
 
 If you installed wls2, you might want to check if the right version is active. You can do this following this link. 
 [Check wls version.](https://askubuntu.com/questions/1177729/wsl-am-i-running-version-1-or-version-2)
-
+[Installing windows terminal, zsh, oh-my-zsh and zsh themes](#installing-windows-terminal,-zsh, oh-my-zsh-and-zsh-themes)
 # Installing windows terminal, zsh, oh-my-zsh and zsh themes
 <img src="https://user-images.githubusercontent.com/21205508/118002859-5204de00-b348-11eb-8ff7-714cf530a656.png" alt="alt text" width="400" height="263">
 
@@ -186,7 +195,7 @@ Better.
 Alternatively use somebody [else's](https://github.com/seebi/dircolors-solarized) color scheme.
 
 ---
-
+[](#)
 # Upgrade python on wls
 Python2 is preinstalled on the windows linux subsystem. If we would update all packages, the promp would tell us that we can upgrade python2 to python3.
 
@@ -205,9 +214,9 @@ Check with python version if the new packages are installed:
 python3 --version
 pip3 --version
 ```
-
+[](#)
 # Python, pyenv and the wonderful world of virtual environments
-
+[](#)
 ## Install pyenv
 We will use pyenv and virtual environments to install, organize and manage different versions of Python (and other libraries) on your computer.  
 ~~Install instructions copied from the pyenv github [page] https://github.com/pyenv/pyenv#installation)~~
@@ -267,7 +276,7 @@ sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
-
+[](#)
 ## Install Python versions
 
 After you installed pyenv you can easily install different Python versions. If you want to see a list of all available versions and flavors you can use the following command:
@@ -288,7 +297,7 @@ To set a specific version as the local (inside a directory) or global (everywher
 pyenv local 3.8.5
 pyenv global 3.8.5
 ```
-
+[](#)
 ### Creating virtual environments with pyenv and [venv](https://docs.python.org/3/tutorial/venv.html) 
 
 Another way of creating virtual environments is tu use the module `venv`. First of all move to the directory for which you want to create the virtual environment. Make sure you use the desired Python version either locally in this directory or globally (you can check the Python version either with `python --version` or `which python`). To set the local Python version and create a new environment you can use the following commands:
@@ -333,7 +342,7 @@ $ pip freeze
 # writes list to file 
 $ pip freeze > requirements.txt     
 ```
-
+[](#)
 # Install Homebrew (optional or when needed)
 [Homebrew](https://brew.sh/) is a package manager that installs the stuff you need that your Linux distro didn’t. We need homebrew to install pyenv. Run this from the command line.
 ```
@@ -361,7 +370,7 @@ Follow any other instructions given by Homebrew.
 
 
 > You may wonder what the difference is between using `brew` and `pip`. They are both package installers, but brew, which is based on Ruby and Git, can be used to install all kinds of software packages, while pip, which is written in Python, can only be used to install Python packages. The main difference, however, is that brew installs packages globally and it cannot be used to install something only in a specific virtual environment. To install a package only locally in an environment you have to use pip!
-
+[](#)
 ## Install pyenv via homebrew
 
 [Pyenv](https://github.com/pyenv/pyenv) is a simple Python version management tool you can download for free using homebrew. 
@@ -379,7 +388,7 @@ vim ~/.zshrc
 eval "$(pyenv init -)"
 ```
 
-
+[](#)
 # Add alias to zsh config file
 ```
 alias setup_python385="pyenv local 3.8.5 &&  
@@ -397,14 +406,14 @@ python3 -m pip install -r requirements.txt"
 For more useful aliases [see](https://opensource.com/article/19/7/bash-aliases)
 
 
-
+[](#)
 # Running jupyter lab after installation
 We will run jupyter lab without the browser window because this doesn't work in wls. After running the command, follow the prompt and copy paste the address into your browser.
 
 ```
 jupyter lab --no-browser
 ```
-
+[](#)
 ## Install vscode or vscode-insiders
 vscode is a cross language IDE. Many people like it so let's have a try. Download the windows version of vscode from [here](https://code.visualstudio.com/download) and install it.
 
