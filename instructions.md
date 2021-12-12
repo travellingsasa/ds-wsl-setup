@@ -1,3 +1,16 @@
+<!-- vscode-markdown-toc -->
+* 1. [Install pyenv](#Installpyenv)
+* 2. [Install Python versions](#InstallPythonversions)
+	* 2.1. [Creating virtual environments with pyenv and [venv](https://docs.python.org/3/tutorial/venv.html)](#Creatingvirtualenvironmentswithpyenvandvenvhttps:docs.python.org3tutorialvenv.html)
+* 3. [Install pyenv via homebrew](#Installpyenvviahomebrew)
+* 4. [Install vscode or vscode-insiders](#Installvscodeorvscode-insiders)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 [Some definitions](#some-definitions)
 
 [Installing windows linux subsystem and a linux distribution](#Installing-windows-linux-subsystem-and-a-linux-distribution)
@@ -217,7 +230,7 @@ pip3 --version
 [](#)
 # Python, pyenv and the wonderful world of virtual environments
 [](#)
-## Install pyenv
+##  1. <a name='Installpyenv'></a>Install pyenv
 We will use pyenv and virtual environments to install, organize and manage different versions of Python (and other libraries) on your computer.  
 ~~Install instructions copied from the pyenv github [page] https://github.com/pyenv/pyenv#installation)~~
 ~~1. Check out pyenv where you want it installed. A good place to choose is $HOME/.pyenv (but you can install it somewhere else).~~
@@ -277,7 +290,7 @@ libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
 [](#)
-## Install Python versions
+##  2. <a name='InstallPythonversions'></a>Install Python versions
 
 After you installed pyenv you can easily install different Python versions. If you want to see a list of all available versions and flavors you can use the following command:
 
@@ -298,7 +311,7 @@ pyenv local 3.8.5
 pyenv global 3.8.5
 ```
 [](#)
-### Creating virtual environments with pyenv and [venv](https://docs.python.org/3/tutorial/venv.html) 
+###  2.1. <a name='Creatingvirtualenvironmentswithpyenvandvenvhttps:docs.python.org3tutorialvenv.html'></a>Creating virtual environments with pyenv and [venv](https://docs.python.org/3/tutorial/venv.html) 
 
 Another way of creating virtual environments is tu use the module `venv`. First of all move to the directory for which you want to create the virtual environment. Make sure you use the desired Python version either locally in this directory or globally (you can check the Python version either with `python --version` or `which python`). To set the local Python version and create a new environment you can use the following commands:
 
@@ -371,7 +384,7 @@ Follow any other instructions given by Homebrew.
 
 > You may wonder what the difference is between using `brew` and `pip`. They are both package installers, but brew, which is based on Ruby and Git, can be used to install all kinds of software packages, while pip, which is written in Python, can only be used to install Python packages. The main difference, however, is that brew installs packages globally and it cannot be used to install something only in a specific virtual environment. To install a package only locally in an environment you have to use pip!
 [](#)
-## Install pyenv via homebrew
+##  3. <a name='Installpyenvviahomebrew'></a>Install pyenv via homebrew
 
 [Pyenv](https://github.com/pyenv/pyenv) is a simple Python version management tool you can download for free using homebrew. 
 
@@ -414,7 +427,7 @@ We will run jupyter lab without the browser window because this doesn't work in 
 jupyter lab --no-browser
 ```
 [](#)
-## Install vscode or vscode-insiders
+##  4. <a name='Installvscodeorvscode-insiders'></a>Install vscode or vscode-insiders
 vscode is a cross language IDE. Many people like it so let's have a try. Download the windows version of vscode from [here](https://code.visualstudio.com/download) and install it.
 
 Once installed we need to set the default terminal to zsh and add the nerd font to it. To do this open the "Command Palette" by pressing
