@@ -1,29 +1,31 @@
-<!-- vscode-markdown-toc -->
-* 1. [Install pyenv](#Installpyenv)
-* 2. [Install Python versions](#InstallPythonversions)
-	* 2.1. [Creating virtual environments with pyenv and [venv](https://docs.python.org/3/tutorial/venv.html)](#Creatingvirtualenvironmentswithpyenvandvenvhttps:docs.python.org3tutorialvenv.html)
-* 3. [Install pyenv via homebrew](#Installpyenvviahomebrew)
-* 4. [Install vscode or vscode-insiders](#Installvscodeorvscode-insiders)
-
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
-[Some definitions](#some-definitions)
-
-[Installing windows linux subsystem and a linux distribution](#Installing-windows-linux-subsystem-and-a-linux-distribution)
-
-[](#)
-[](#)
-[](#)
 
 
-# Some definitions
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [1. Some definitions](#1-some-definitions)
+- [2. Installing windows linux subsystem and a linux distribution](#2-installing-windows-linux-subsystem-and-a-linux-distribution)
+- [3. Installing windows terminal, zsh, oh-my-zsh and zsh themes](#3-installing-windows-terminal-zsh-oh-my-zsh-and-zsh-themes)
+- [Upgrade python on wls](#upgrade-python-on-wls)
+- [Python, pyenv and the wonderful world of virtual environments](#python-pyenv-and-the-wonderful-world-of-virtual-environments)
+  - [1. Install pyenv](#1-a-nameinstallpyenvainstall-pyenv)
+  - [2. Install Python versions](#2-a-nameinstallpythonversionsainstall-python-versions)
+    - [2.1. Creating virtual environments with pyenv and venv](#21-a-namecreatingvirtualenvironmentswithpyenvandvenvhttpsdocspythonorg3tutorialvenvhtmlacreating-virtual-environments-with-pyenv-and-venvhttpsdocspythonorg3tutorialvenvhtml)
+- [Install Homebrew (optional or when needed)](#install-homebrew-optional-or-when-needed)
+  - [3. Install pyenv via homebrew](#3-a-nameinstallpyenvviahomebrewainstall-pyenv-via-homebrew)
+- [Add alias to zsh config file](#add-alias-to-zsh-config-file)
+- [Running jupyter lab after installation](#running-jupyter-lab-after-installation)
+  - [4. Install vscode or vscode-insiders](#4-a-nameinstallvscodeorvscode-insidersainstall-vscode-or-vscode-insiders)
+
+<!-- /code_chunk_output -->
+
+
+
+# 1. Some definitions
 The terminal usually refers to a [terminal emulator program](https://www.ttwin.com/blog/333-terminal-emulator), which provides the window that displays the shell and allows you to interact with it. Usually a blinking courser marks the input line. This line is called the "prompt" or the "command line".   The shell is a program which interprets the user input. Also called a "command line interpreter".
 
-# Installing windows linux subsystem and a linux distribution
+# 2. Installing windows linux subsystem and a linux distribution
 <img src="https://docs.microsoft.com/en-us/windows/images/windows-linux-dev-env.png" alt="wsl" width="400" height="263">
 
 Since Windows 10, Windows comes with a linux subsystem (wls) which allows you to run linux on your windows machine. This subsystem was upgraded 2021 for performance enhancements and is called wls2. It is up to you which version you want to install. The following link shows you how to install wls anfpyd upgrade to wls2. If you don't want to upgrade to wls2 you skip steps 2-5.
@@ -33,7 +35,8 @@ Since Windows 10, Windows comes with a linux subsystem (wls) which allows you to
 If you installed wls2, you might want to check if the right version is active. You can do this following this link. 
 [Check wls version.](https://askubuntu.com/questions/1177729/wsl-am-i-running-version-1-or-version-2)
 [Installing windows terminal, zsh, oh-my-zsh and zsh themes](#installing-windows-terminal,-zsh, oh-my-zsh-and-zsh-themes)
-# Installing windows terminal, zsh, oh-my-zsh and zsh themes
+
+# 3. Installing windows terminal, zsh, oh-my-zsh and zsh themes
 <img src="https://user-images.githubusercontent.com/21205508/118002859-5204de00-b348-11eb-8ff7-714cf530a656.png" alt="alt text" width="400" height="263">
 
 
