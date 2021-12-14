@@ -274,16 +274,12 @@ For bash/Zsh:
 
 3. Add pyenv init to your shell to enable shims and autocompletion. Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
 
-For bash:
 ```
-echo 'export PATH="$HOME/.pyenv/bin:$PATH"'
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.profile
+echo -e 'export PATH="$HOME/.pyenv/bin:$PATH"\nif command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"&& eval "$(pyenv virtualenv-init -)"\nfi' >> ~/.zshrc
 ```
-For Zsh:
-```
-echo 'export PATH="$HOME/.pyenv/bin:$PATH"'
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
-```
+
+
+
 General warning: There are some systems where the BASH_ENV variable is configured to point to .bashrc. On such systems you should almost certainly put the above mentioned line eval "$(pyenv init -)" into .bash_profile, and not into .bashrc. Otherwise you may observe strange behaviour, such as pyenv getting into an infinite loop. See #264 for details.
 
 Suggested build environment for pyenv on [Ubuntu](https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
@@ -292,7 +288,7 @@ sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
-[](#)
+
 ##  2. <a name='InstallPythonversions'></a>Install Python versions
 
 After you installed pyenv you can easily install different Python versions. If you want to see a list of all available versions and flavors you can use the following command:
