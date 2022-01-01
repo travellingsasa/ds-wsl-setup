@@ -1,11 +1,16 @@
 
-
+# TOC
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
+- [TOC](#toc)
 - [1. Some definitions](#1-some-definitions)
 - [2. Installing windows linux subsystem and a linux distribution](#2-installing-windows-linux-subsystem-and-a-linux-distribution)
+  - [2.1 Changing the default wsl user](#21-changing-the-default-wsl-user)
+  - [2.1 Add linux distribution as network drive](#21-add-linux-distribution-as-network-drive)
+  - [2.2 Changing the default home directory Windows Terminal](#22-changing-the-default-home-directory-windows-terminal)
+  - [2.3 Changing the default home directory VS Code](#23-changing-the-default-home-directory-vs-code)
 - [3. Installing windows terminal, zsh, oh-my-zsh and zsh themes](#3-installing-windows-terminal-zsh-oh-my-zsh-and-zsh-themes)
 - [Upgrade python on wls](#upgrade-python-on-wls)
 - [Python, pyenv and the wonderful world of virtual environments](#python-pyenv-and-the-wonderful-world-of-virtual-environments)
@@ -28,13 +33,57 @@ The terminal usually refers to a [terminal emulator program](https://www.ttwin.c
 # 2. Installing windows linux subsystem and a linux distribution
 <img src="https://docs.microsoft.com/en-us/windows/images/windows-linux-dev-env.png" alt="wsl" width="400" height="263">
 
-Since Windows 10, Windows comes with a linux subsystem (wls) which allows you to run linux on your windows machine. This subsystem was upgraded 2021 for performance enhancements and is called wls2. It is up to you which version you want to install. The following link shows you how to install wls anfpyd upgrade to wls2. If you don't want to upgrade to wls2 you skip steps 2-5.
+Since Windows 10, Windows comes with a linux subsystem (wls) which allows you to run linux on your windows machine. This subsystem was upgraded 2021 for performance enhancements and is called wls2. It is up to you which version you want to install. The following link shows you how to install wls and upgrade to wls2.
 [Follow these steps.](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-3---enable-virtual-machine-feature)
 
 
 If you installed wls2, you might want to check if the right version is active. You can do this following this link. 
 [Check wls version.](https://askubuntu.com/questions/1177729/wsl-am-i-running-version-1-or-version-2)
-[Installing windows terminal, zsh, oh-my-zsh and zsh themes](#installing-windows-terminal,-zsh, oh-my-zsh-and-zsh-themes)
+
+
+## 2.1 Changing the default wsl user
+Depending on how you installed wsl you might want to change the default user from root to your username.
+
+```bash
+ubuntu config --default-user new_user_name
+```
+
+## 2.1 Add linux distribution as network drive
+Open the file explorer and serch for 
+```
+\\wsl$
+```
+this will open the linux distribution path from windows.
+
+Right click on your distro directory icon and choose "Connect network drive". Choose a drive letter and press ok. You should see a new network icon. You can rename it to Linux or something.
+
+## 2.2 Changing the default home directory Windows Terminal
+You should change your home directory if it is located on the windows system and looks like this.
+```
+/mnt/c/Users/username
+```
+
+Open the JSON file via the Windows Terminal settings and search for 
+```
+"source": "Windows.Terminal.Wsl 
+```
+
+ then add this line below
+```
+,"startingDirectory":"\\\\wsl$\\Ubuntu\\home\\your_username"
+```
+
+## 2.3 Changing the default home directory VS Code
+Open the VS Code settings and search for 
+```vscode
+Terminal:integrated:cwd
+```
+and enter your new network path to the box
+
+```vscode
+U:\home\username
+```
+
 
 # 3. Installing windows terminal, zsh, oh-my-zsh and zsh themes
 <img src="https://user-images.githubusercontent.com/21205508/118002859-5204de00-b348-11eb-8ff7-714cf530a656.png" alt="alt text" width="400" height="263">
@@ -73,14 +122,7 @@ Agnoster ist just one of many different themes which come preinstalled in oh-my-
 Uses popular themes from mac os iterm2 terminal.
 
 4. [Starship theme](https://starship.rs/guide/#%F0%9F%9A%80-installation) 🚀
-Install starship
-```
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-```
-Add the following to the end of ~/.zshrc:
-```
-export eval "$(starship init zsh)" >> ~/.zshrc
-```
+
 
 
 I personally use the windows terminal, with the firamono nerd font and starship. Do whatever you like. If this is overwhelming stick to number one, two or use my routine:
@@ -95,6 +137,15 @@ Install zsh
 ```
 sudo apt install zsh -y
 ```
+
+Make zsh the default shell. Enter 
+```
+chsh -s /bin/zsh
+```
+and follow the prompt.
+
+
+
 
 Install oh-my-zsh
 ```
@@ -142,9 +193,11 @@ Install starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
 
-Add starship to zsh config file. By adding this at the end of ~/.zshrc. Some people also recommend to comment out this line ZSH_THEME="theme name"
+Add starship to zsh config file. By adding this at the end of ~/.zshrc.  
+Some people also recommend to comment out this line ZSH_THEME="theme name"
+
 ``` 
-eval "$(starship init zsh)"
+export eval "$(starship init zsh)" >> ~/.zshrc
 ```
 
 [Troubleshooting starship install](https://denysdovhan.com/spaceship-prompt/docs/Troubleshooting.html)
@@ -211,7 +264,7 @@ Better.
 Alternatively use somebody [else's](https://github.com/seebi/dircolors-solarized) color scheme.
 
 ---
-[](#)
+
 # Upgrade python on wls
 Python2 is preinstalled on the windows linux subsystem. If we would update all packages, the promp would tell us that we can upgrade python2 to python3.
 
@@ -230,9 +283,9 @@ Check with python version if the new packages are installed:
 python3 --version
 pip3 --version
 ```
-[](#)
+
 # Python, pyenv and the wonderful world of virtual environments
-[](#)
+
 ##  1. <a name='Installpyenv'></a>Install pyenv
 We will use pyenv and virtual environments to install, organize and manage different versions of Python (and other libraries) on your computer.  
 ~~Install instructions copied from the pyenv github [page] https://github.com/pyenv/pyenv#installation)~~
