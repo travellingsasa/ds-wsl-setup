@@ -137,3 +137,6 @@ data/*.json
 
 models/*.pickle
 models/*.pkl
+
+#dont commit image folder
+/img
